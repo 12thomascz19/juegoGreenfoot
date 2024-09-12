@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Cohete
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ cohete\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Cohete()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ cohete\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Metodos\ Action\ que\ se\ ejecuta\ siempre\ que\ el\ objeto\ exista\r\n
+comment3.params=
+comment3.target=void\ prepare()
+comment3.text=\r\n\ Metodo\ preparacion\ de\ los\ elementos\ de\ esta\ Clase\r\n
+comment4.params=
+comment4.target=void\ moveAround()
+comment4.text=\r\n\ Metodos\ de\ RocketSpace\ completos\ y\ con\ elementos\ completos\ no\ estandares.\r\n
+comment5.params=
+comment5.target=void\ fireProjectile()
+numComments=6
