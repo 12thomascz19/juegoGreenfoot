@@ -3,79 +3,74 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class cohete here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Thomas Cano 
+ * @version 1.0
  */
 public class Cohete extends Actor
 {
-    /**
-     * Act - do whatever the cohete wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     public Cohete(){
         setRotation(270);
     }
-        
-/**
-     * Declaraciones
-     */
-    Boolean canFire = true; 
-
-    /**
-     * Metodos getter and setters
-     */
-    /**
-     * Metodos Action que se ejecuta siempre que el objeto exista
-     */
+    Boolean canFire = true;
     public void act() 
     {
         moveAround();
         fireProjectile();
+        rotateCohete();
     }   
 
-    /**
-     * Metodo preparacion de los elementos de esta Clase
-     */
+    
     private void prepare()
     {
     }
 
-    /**
-     * Metodos de RocketSpace completos y con elementos completos no estandares.
-     */
-
-    //El proceso de mover con las teclas de teclado
     public void moveAround()
     {
         if(Greenfoot.isKeyDown("D")){
             setLocation(getX()+5, getY());//Moverse hacia la derecha
         }
-        if(Greenfoot.isKeyDown("A")){
+        else if(Greenfoot.isKeyDown("A")) {
             setLocation(getX()-5, getY());//Moverse hacia la izquierda
         }
-         if(Greenfoot.isKeyDown("W")){
+        else if(Greenfoot.isKeyDown("W")) {
             setLocation(getX(), getY()-5);//Moverse hacia la arriba
         }
-         if(Greenfoot.isKeyDown("S")){
+        else if(Greenfoot.isKeyDown("S")) {
             setLocation(getX(), getY()+5);//Moverse hacia la abajo
         }
-
     }
 
-    //Accion de dispoaro para disparar
     public void fireProjectile()
     {
-        if(Greenfoot.isKeyDown("space") && canFire == true){
-            getWorld().addObject(new Projectile(), getX(), getY()-30);
-            canFire = false;
-            Greenfoot.playSound("disparoLaser.mp3");//Accion de sonido
-        } else if(!Greenfoot.isKeyDown("space")){//Tecla para disparar "Space"
+        if(Greenfoot.isKeyDown("space") && canFire == true) {
+        getWorld().addObject(new Projectile(), getX(), getY());
+        canFire = false;
+        Greenfoot.playSound("disparoLaser.mp3");
+        
+        } else if(!Greenfoot.isKeyDown("space")) {
             canFire = true;   
         }
-
     }
+    
+    public void rotateCohete() {
+        if(Greenfoot.isKeyDown("Right")) {
+            setRotation(0);
+        }
+        
+        if(Greenfoot.isKeyDown("Down")) {
+            setRotation(90);
+        }
+           
+        if(Greenfoot.isKeyDown("Up")) {
+            setRotation(-90);
+        }
+            
+        if(Greenfoot.isKeyDown("Left")) {
+            setRotation(180);
+        }
     }
+}
 
 
 
+  
